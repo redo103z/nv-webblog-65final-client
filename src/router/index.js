@@ -5,6 +5,11 @@ import UserEdit from '@/components/Users/EditUser'
 import UserShow from '@/components/Users/ShowUser'
 import UserCreate from '@/components/Users/CreateUser'
 
+// import BookIndex from '@/components/Books/Index'
+// import BookCreate from '@/components/Books/CreateBook'
+// import BookEdit from '@/components/Books/EditBook'
+// import BookShow from '@/components/Books/ShowBook' 
+
 Vue.use(Router)
 
 export default new Router({
@@ -29,8 +34,31 @@ export default new Router({
       name: 'users',
       component: UserIndex
     },
-
+    {
+      path: '/books',
+      name: 'books',
+      component: BookIndex
+    },
+    {
+      path: '/book/create',
+      name: 'book-create',
+      component: BookCreate
+    },{
+      path: '/book/edit/:bookId',
+      name: 'book-edit',
+      component: BookEdit
+    },
+    {
+      path: '/book/:bookId',
+      name: 'book',
+      component: BookShow
+    },
     
+    {
+      path: '/upload',
+      name: 'upload',
+      component: Upload
+    }
 
   ]
 })
